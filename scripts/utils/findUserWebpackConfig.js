@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const CREATE_REACT_APP_WEBPACK_CONFIG = 'react-scripts/config/webpack.config.dev';
+const CREATE_REACT_APP_WEBPACK_CONFIG = `${process.cwd()}/node_modules/react-scripts-ts/config/webpack.config.dev.js`;
 const USER_WEBPACK_CONFIG_NAMES = ['webpack.config.js', 'webpackfile.js'];
 
 const absolutize = filePath => path.resolve(process.cwd(), filePath);

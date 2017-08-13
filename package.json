@@ -72,6 +72,7 @@
     "react-dev-utils": "^3.0.2",
     "react-docgen": "^3.0.0-beta5",
     "react-docgen-displayname-handler": "^1.0.0",
+    "react-docgen-typescript": "^1.0.0",
     "react-group": "^1.0.5",
     "react-icons": "^2.2.5",
     "remark": "^8.0.0",

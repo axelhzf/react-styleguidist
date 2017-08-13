@@ -19,8 +19,7 @@ module.exports = function(source) {
 		config.contextDependencies.forEach(dir => this.addContextDependency(dir));
 	}
 
-	const defaultParser = (filePath, source, resolver, handlers) =>
-		reactDocs.parse(source, resolver, handlers);
+	const defaultParser = require('react-docgen-typescript').parse;
 	const propsParser = config.propsParser || defaultParser;
 
 	let props = {};
