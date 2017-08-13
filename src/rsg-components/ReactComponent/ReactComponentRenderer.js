@@ -32,6 +32,7 @@ export function ReactComponentRenderer({
 	examples,
 	tabButtons,
 	tabBody,
+	stories,
 }) {
 	return (
 		<div className={classes.root} id={name + '-container'}>
@@ -55,6 +56,7 @@ export function ReactComponentRenderer({
 					{tabBody}
 				</div>}
 			{examples}
+			{stories}
 		</div>
 	);
 }
@@ -70,6 +72,7 @@ ReactComponentRenderer.propTypes = {
 	docs: PropTypes.node,
 	examples: PropTypes.node,
 	isolated: PropTypes.bool,
+	stories: PropTypes.node,
 };
 
 export default Styled(styles)(ReactComponentRenderer);

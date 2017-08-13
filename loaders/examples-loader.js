@@ -71,9 +71,9 @@ if (module.hot) {
 }
 
 var requireMap = ${generate(toAst(allRequiresCode))};
-var requireInRuntimeBase = require(${JSON.stringify(absolutize('utils/client/requireInRuntime'))});
+var requireInRuntimeBase = require('react-styleguidist/loaders/utils/client/requireInRuntime');
 var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = require(${JSON.stringify(absolutize('utils/client/evalInContext'))});
+var evalInContextBase = require('react-styleguidist/loaders/utils/client/evalInContext');
 var evalInContext = evalInContextBase.bind(null, ${JSON.stringify(
 		generate(requireContextCode)
 	)}, requireInRuntime);

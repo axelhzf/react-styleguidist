@@ -5,6 +5,7 @@ import SectionHeading from 'rsg-components/SectionHeading';
 import JsDoc from 'rsg-components/JsDoc';
 import Markdown from 'rsg-components/Markdown';
 import Slot from 'rsg-components/Slot';
+import Stories from 'rsg-components/Stories';
 import ReactComponentRenderer from 'rsg-components/ReactComponent/ReactComponentRenderer';
 import { DOCS_TAB_USAGE } from '../slots';
 
@@ -43,7 +44,7 @@ export default class ReactComponent extends Component {
 		const { activeTab } = this.state;
 		const { isolatedComponent } = this.context;
 		const { component } = this.props;
-		const { name, slug, pathLine } = component;
+		const { name, slug, pathLine, stories } = component;
 		const { description, examples = [], tags = {} } = component.props;
 		if (!name) {
 			return null;
@@ -70,10 +71,11 @@ export default class ReactComponent extends Component {
 					</SectionHeading>
 				}
 				examples={
-					examples.length > 0
-						? <Examples examples={examples} name={name} />
-						: <ExamplePlaceholder name={name} />
+					examples.length === 0 && !stories
+						? <ExamplePlaceholder name={name} />
+						: <Examples examples={examples} name={name} />
 				}
+				stories={<Stories stories={stories} />}
 				tabButtons={
 					<Slot
 						name="docsTabButtons"

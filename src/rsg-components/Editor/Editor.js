@@ -18,6 +18,7 @@ const codemirrorOptions = {
 	smartIndent: false,
 	matchBrackets: true,
 	viewportMargin: Infinity,
+	readOnly: true,
 };
 
 const UPDATE_DELAY = 10;

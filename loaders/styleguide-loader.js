@@ -65,6 +65,8 @@ module.exports.pitch = function() {
 		sections,
 	};
 
+	console.log(styleguide);
+
 	return `
 if (module.hot) {
 	module.hot.accept([])

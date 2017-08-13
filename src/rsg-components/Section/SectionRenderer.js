@@ -10,7 +10,7 @@ const styles = ({ space }) => ({
 });
 
 export function SectionRenderer(allProps) {
-	const { classes, name, slug, content, components, sections, primary } = allProps;
+	const { classes, name, slug, content, components, sections, primary, stories } = allProps;
 	return (
 		<section className={classes.root}>
 			{name &&

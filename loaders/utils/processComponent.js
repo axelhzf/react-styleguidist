@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const requireIt = require('./requireIt');
+const processStories = require('./processStories').default;
 
 const propsLoader = path.resolve(__dirname, '../props-loader.js');
 
@@ -34,6 +35,7 @@ module.exports = function processComponent(filepath, config) {
 		module: requireIt(filepath),
 		props: requireIt(`!!${propsLoader}!${filepath}`),
 		hasExamples: examplesFile && fs.existsSync(examplesFile),
+		stories: processStories(filepath),
 		metadata: fs.existsSync(componentMetadataPath)
 			? requireIt(`!!json-loader!${componentMetadataPath}`)
 			: {},
