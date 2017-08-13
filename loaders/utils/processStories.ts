@@ -39,8 +39,13 @@ function processStoriesSource(storiesFile: ts.SourceFile) {
 					if (ts.isStringLiteral(node.arguments[0])) {
 						const storyFn = node.arguments[1];
 						if (ts.isArrowFunction(storyFn)) {
-							const storyBody = storyFn.body.getText();
-							result.push(storyBody);
+							const body = storyFn.body;
+							if(ts.isParenthesizedExpression(body)) {
+								result.push(body.expression.getText());
+							} else {
+								const storyBody = body.getText();
+								result.push(storyBody);
+							}
 						}
 					}
 				}

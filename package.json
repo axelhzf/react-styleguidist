@@ -78,6 +78,7 @@
     "remark": "^8.0.0",
     "semver-utils": "^1.1.1",
     "style-loader": "^0.18.2",
+    "styled-components": "^2.1.2",
     "to-ast": "^1.0.0",
     "type-detect": "^4.0.3",
     "typescript": "^2.4.2",
@@ -161,8 +162,7 @@
     "phantomjs:customised": "phantomjs test/phantom.js examples/customised/styleguide/index.html",
     "phantomjs:sections": "phantomjs test/phantom.js examples/sections/styleguide/index.html",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "danger": "danger",
-    "precommit": ""
+    "danger": "danger"
   },
   "release": {
     "analyzeCommits": "semantic-release-tamia/analyzeCommits",
